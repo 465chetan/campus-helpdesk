@@ -104,7 +104,7 @@ export default function App() {
         } />
 
         {/* Catch all */}
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
 
       </Routes>
     </BrowserRouter>
