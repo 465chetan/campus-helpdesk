@@ -5,7 +5,7 @@ import './index.css'
 import axios from 'axios'
 import { AuthProvider } from './context/AuthContext'
 
-axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = 'https://mru-helpdesk-backend.onrender.com'
 
 // Register Service Worker for PWA
 if ('serviceWorker' in navigator) {

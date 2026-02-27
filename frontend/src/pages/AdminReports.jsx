@@ -28,7 +28,7 @@ export default function AdminReports() {
   const fetchAnalytics = async () => {
     try {
       const { data } = await axios.get(
-        'http://localhost:5000/api/users/analytics/complaints'
+        'https://mru-helpdesk-backend.onrender.com/api/users/analytics/complaints'
       );
       setAnalytics(data);
     } catch (err) {
@@ -39,7 +39,7 @@ export default function AdminReports() {
   const fetchFeedback = async () => {
     try {
       const { data } = await axios.get(
-        'http://localhost:5000/api/feedback/all'
+        'https://mru-helpdesk-backend.onrender.com/api/feedback/all'
       );
       setDeptRatings(data.deptRatings || []);
       setAllFeedback(data.feedback || []);
@@ -51,7 +51,7 @@ export default function AdminReports() {
   const fetchStats = async () => {
     try {
       const { data } = await axios.get(
-        'http://localhost:5000/api/complaints/stats/summary'
+        'https://mru-helpdesk-backend.onrender.com/api/complaints/stats/summary'
       );
       setStats(data);
     } catch (err) {

@@ -15,7 +15,7 @@ export default function Login() {
     setError('');
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', form);
+      const { data } = await axios.post('https://mru-helpdesk-backend.onrender.com/api/auth/login', form);
       login(data.user, data.token);
       if (data.user.role === 'admin') navigate('/admin');
       else if (data.user.role === 'staff') navigate('/dept');

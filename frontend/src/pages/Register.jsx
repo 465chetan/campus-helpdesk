@@ -26,7 +26,7 @@ export default function Register() {
     }
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/auth/register', {
+      await axios.post('https://mru-helpdesk-backend.onrender.com/api/auth/register', {
         name: form.name,
         email: form.email,
         password: form.password,

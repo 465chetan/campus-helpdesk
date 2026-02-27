@@ -21,7 +21,7 @@ export default function Profile() {
 
   const fetchProfile = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/auth/profile');
+      const { data } = await axios.get('https://mru-helpdesk-backend.onrender.com/api/auth/profile');
       setProfile(data);
       setForm({ name: data.name, phone: data.phone || '' });
     } catch (err) {
@@ -31,7 +31,7 @@ export default function Profile() {
 
   const fetchStats = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/complaints/stats/summary');
+      const { data } = await axios.get('https://mru-helpdesk-backend.onrender.com/api/complaints/stats/summary');
       setStats(data);
     } catch (err) {
       console.log(err);
@@ -41,7 +41,7 @@ export default function Profile() {
   const handleUpdate = async () => {
     setLoading(true);
     try {
-      await axios.put('http://localhost:5000/api/auth/profile', form);
+      await axios.put('https://mru-helpdesk-backend.onrender.com/api/auth/profile', form);
       setSuccess('Profile updated successfully!');
       setEditing(false);
       fetchProfile();

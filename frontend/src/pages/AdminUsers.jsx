@@ -12,7 +12,7 @@ export default function AdminUsers() {
   const fetchUsers = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/users${search ? `?search=${search}` : ''}`
+        `https://mru-helpdesk-backend.onrender.com/api/users${search ? `?search=${search}` : ''}`
       );
       setUsers(data);
     } catch (err) {
@@ -22,7 +22,7 @@ export default function AdminUsers() {
 
   const fetchDepartments = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/departments');
+      const { data } = await axios.get('https://mru-helpdesk-backend.onrender.com/api/departments');
       setDepartments(data);
     } catch (err) {
       console.log(err);
@@ -49,7 +49,7 @@ export default function AdminUsers() {
 
   const save = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/users/${editUser.id}`, form);
+      await axios.put(`https://mru-helpdesk-backend.onrender.com/api/users/${editUser.id}`, form);
       alert('User updated successfully!');
       setEditUser(null);
       fetchUsers();
@@ -61,7 +61,7 @@ export default function AdminUsers() {
   const deleteUser = async (id) => {
     if (!confirm('Are you sure you want to delete this user?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`);
+      await axios.delete(`https://mru-helpdesk-backend.onrender.com/api/users/${id}`);
       fetchUsers();
     } catch (err) {
       alert('Failed to delete user');

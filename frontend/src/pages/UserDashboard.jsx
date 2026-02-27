@@ -19,9 +19,9 @@ export default function UserDashboard() {
   const [recent, setRecent] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/complaints/stats/summary')
+    axios.get('https://mru-helpdesk-backend.onrender.com/api/complaints/stats/summary')
       .then(r => setStats(r.data)).catch(() => {});
-    axios.get('http://localhost:5000/api/complaints')
+    axios.get('https://mru-helpdesk-backend.onrender.com/api/complaints')
       .then(r => setRecent(r.data.slice(0, 5))).catch(() => {});
   }, []);
 

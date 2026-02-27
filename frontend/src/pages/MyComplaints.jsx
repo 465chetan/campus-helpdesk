@@ -20,8 +20,8 @@ export default function MyComplaints() {
   const fetchComplaints = async () => {
     try {
       const url = statusFilter
-        ? `http://localhost:5000/api/complaints?status=${statusFilter}`
-        : `http://localhost:5000/api/complaints`;
+        ? `https://mru-helpdesk-backend.onrender.com/api/complaints?status=${statusFilter}`
+        : `https://mru-helpdesk-backend.onrender.com/api/complaints`;
       const { data } = await axios.get(url);
       setComplaints(data);
     } catch (err) {
@@ -35,7 +35,7 @@ export default function MyComplaints() {
     setSelected(c);
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/complaints/${c.id}`
+        `https://mru-helpdesk-backend.onrender.com/api/complaints/${c.id}`
       );
       setUpdates(data.updates || []);
     } catch (err) {
