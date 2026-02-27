@@ -24,7 +24,7 @@ export default function FeedbackForm() {
   const fetchComplaint = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/complaints/${id}`
+        `https://mru-helpdesk-backend.onrender.com/api/complaints/${id}`
       );
       setComplaint(data);
     } catch (err) {
@@ -35,7 +35,7 @@ export default function FeedbackForm() {
   const fetchExistingFeedback = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/feedback/complaint/${id}`
+        `https://mru-helpdesk-backend.onrender.com/api/feedback/complaint/${id}`
       );
       if (data) {
         setExistingFeedback(data);
@@ -54,7 +54,7 @@ export default function FeedbackForm() {
     }
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/feedback', {
+      await axios.post('https://mru-helpdesk-backend.onrender.com/api/feedback', {
         complaint_id: parseInt(id),
         rating,
         comment
